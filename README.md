@@ -1,6 +1,3 @@
 # **Support-Vector-Machine**
-### This is a support vector machine build in C++, I hope you enjoy the math as I did and enjoy the project! 	:laughing:
-
-
-
 # Introduction
+Support vector machine was based on optimizing linear classification which one of them was known as logistic regression. By adding the margins to expand the area, it alows more accurate and precise prediction than just linear line.
