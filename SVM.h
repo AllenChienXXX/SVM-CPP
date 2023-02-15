@@ -9,7 +9,7 @@ using namespace std;
 class SVM
 {
 public:
-	SVM(vector<vector<float>>inputs, vector<float>labels, float C = 200, float tolerence = 0.0001);
+	SVM(vector<vector<float>>inputs, vector<float>labels);
 
 	void init_alpha_b(int len);
 
