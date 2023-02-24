@@ -1,4 +1,10 @@
 # **Support-Vector-Machine**
+
+* [Introduction](#-Introduction)
+* [Instruction](#-Instruction)
+* [Conclusion](#-Conclusion)
+* [License](#-License)
+
 # Introduction
 Support vector machine was based on optimizing linear classification which one of them was known as logistic regression. By adding the margins to expand the area, it alows more accurate and precise prediction than linear regression or logistic regression.
 
@@ -20,12 +26,12 @@ since y (label) can only be 1 or -1
 We choose both α wich satisfy conditions.
 And by adjusting 2 of a time, we will get the best result of α, then we use update bias.
 
-#Instruction
+# Instruction
 This is a basic svm model, kernel functions are not tested in this code, so its better to use 2-d and linear separable data for testing results.
 
-###1. Download the header file (SVM.h) and .cpp file (SVM.cpp).
-###2. Include the header file in your workspace.
-###3. Create input and labels in vectors (Must be the same amounts !)
+### 1. Download the header file (SVM.h) and .cpp file (SVM.cpp).
+### 2. Include the header file in your workspace.
+### 3. Create input and labels in vectors (Must be the same amounts !)
 
 Example:
 ```
@@ -47,9 +53,12 @@ Example:
     mysvm.print_v(mysvm.outputs);
 //    mysvm.print_v(mysvm.errors);
 ```
-#Conclusion
+# Conclusion
 This is just a basic model for people who are interested in the algorithms and enjoy machine learning.
 
 for simple data like this, the amount of steps for training doesn't need to be large.
 
-###Thank you for using my model and hope you enjoy!:blush:	
+### Thank you for using my model and hope you enjoy!:blush:	
+
+# License
+[MIT](https://github.com/AllenChienXXX/SVM-SMO/blob/main/LICENSE.txt)
