@@ -19,3 +19,37 @@ since y (label) can only be 1 or -1
 
 We choose both α wich satisfy conditions.
 And by adjusting 2 of a time, we will get the best result of α, then we use update bias.
+
+#Instruction
+This is a basic svm model, kernel functions are not tested in this code, so its better to use 2-d and linear separable data for testing results.
+
+###1. Download the header file (SVM.h) and .cpp file (SVM.cpp).
+###2. Include the header file in your workspace.
+###3. Create input and labels in vectors (Must be the same amounts !)
+
+Example:
+```
+    vector<vector<float>> inputs = { {1,1},{1,3},{2,3},{3.5,5},{9,3},
+        {-1,-5},{-4,-3},{-9.9,-1},{-5,-8},{-7,-8}};
+    vector<float> labels = { 1,1,1,1,1,-1,-1,-1,-1,-1};
+    SVM mysvm(inputs, labels);
+    
+    int train_steps = 100;
+
+    for (int i = 0; i < train_steps; i++) {
+        mysvm.train();
+//print out the outputs to trace it
+//        mysvm.print_v(mysvm.outputs);
+    }
+    
+//print out the final result
+//    mysvm.print_alpha();
+    mysvm.print_v(mysvm.outputs);
+//    mysvm.print_v(mysvm.errors);
+```
+#Conclusion
+This is just a basic model for people who are interested in the algorithms and enjoy machine learning.
+
+for simple data like this, the amount of steps for training doesn't need to be large.
+
+###Thank you for using my model and hope you enjoy!:blush:	
