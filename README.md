@@ -12,9 +12,10 @@ This project uses Sequential minimal optimization(SMO) to solve the dual problem
 
 ### Dual problem of SVM
 This is the dual problem of SVM
- α: Lagrange multiplyer
- y: Ｌabel
- x: input
+ * **α: Lagrange multiplyer**
+ * **y: Label**
+ * **x: Input**
+ 
 ![C86CA530-08B2-4E30-A4D8-2AACEA90EC09_4_5005_c](https://user-images.githubusercontent.com/87592678/221047075-b28b8efd-78c1-4234-aebd-96faaf852ce9.jpeg)
 
 ### Solution
