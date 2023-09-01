@@ -39,22 +39,14 @@ Example:
     vector<vector<float>> inputs = { {1,1},{1,3},{2,3},{3.5,5},{9,3},
         {-1,-5},{-4,-3},{-9.9,-1},{-5,-8},{-7,-8}};
     vector<float> labels = { 1,1,1,1,1,-1,-1,-1,-1,-1};
-    SVM mysvm(inputs, labels);
-    
-    int train_steps = 100;
-
-    for (int i = 0; i < train_steps; i++) {
-        mysvm.train();
-//print out the outputs to trace it
-//        mysvm.print_v(mysvm.outputs);
-    }
-    
-//print out the final result
-//    mysvm.print_alpha();
-    mysvm.print_v(mysvm.outputs);
-//    mysvm.print_v(mysvm.errors);
+    SVM mysvm(X, Y, 10);
+    mysvm.train(500);
+    mysvm.get_weights();
+    mysvm.plot(argc, argv); //arguments for creating the window, use the same arguments from main()
 ```
 # Conclusion
+The result looks like this:
+
 This is just a basic model for people who are interested in the algorithms and enjoy machine learning.
 
 for simple data like this, the amount of steps for training doesn't need to be large.
