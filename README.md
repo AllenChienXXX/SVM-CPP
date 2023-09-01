@@ -36,16 +36,29 @@ This is a basic svm model, kernel functions are not tested in this code, so its 
 
 Example:
 ```
-    vector<vector<float>> inputs = { {1,1},{1,3},{2,3},{3.5,5},{9,3},
-        {-1,-5},{-4,-3},{-9.9,-1},{-5,-8},{-7,-8}};
-    vector<float> labels = { 1,1,1,1,1,-1,-1,-1,-1,-1};
+ int main(int argc, char** argv)
+{
+    // Use file
+    string filepath = "data.csv";
+    preprocess *file = new preprocess(filepath);
+    vector<vector<double>> X = file->read_column(1, 2);
+    vector<double> Y = file->read_column(0);
+
+    //Use custom data
+    //vector<vector<double>> X = { {-3,-1},{-4,-2},{-2,-3},{-1,-4},{5,5},{3,5}, {2,7},{7,4} };
+    //vector<double> Y = { -1.0,-1.0,-1.0,-1.0,1.0,1.0,1.0,1.0 };
+
     SVM mysvm(X, Y, 10);
+
     mysvm.train(500);
+
+    //mysvm.predict({ {10,20},{70,10},{82,10},{10,30},{70,40} });
     mysvm.get_weights();
-    mysvm.plot(argc, argv); //arguments for creating the window, use the same arguments from main()
+    mysvm.plot(argc, argv);
+}
 ```
 # Conclusion
-The result looks like this:
+![](svmplot.png)
 
 This is just a basic model for people who are interested in the algorithms and enjoy machine learning.
 
