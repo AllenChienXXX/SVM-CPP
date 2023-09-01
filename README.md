@@ -36,25 +36,28 @@ This is a basic svm model, kernel functions are not tested in this code, so its 
 
 Example:
 ```
-    vector<vector<float>> inputs = { {1,1},{1,3},{2,3},{3.5,5},{9,3},
-        {-1,-5},{-4,-3},{-9.9,-1},{-5,-8},{-7,-8}};
-    vector<float> labels = { 1,1,1,1,1,-1,-1,-1,-1,-1};
-    SVM mysvm(inputs, labels);
-    
-    int train_steps = 100;
+int main(int argc, char** argv)
+{
+    // Choose to use data from a file
+    string filepath = "data.csv";
+    preprocess *file = new preprocess(filepath);
+    vector<vector<double>> X = file->read_column(1, 2);
+    vector<double> Y = file->read_column(0);
 
-    for (int i = 0; i < train_steps; i++) {
-        mysvm.train();
-//print out the outputs to trace it
-//        mysvm.print_v(mysvm.outputs);
-    }
-    
-//print out the final result
-//    mysvm.print_alpha();
-    mysvm.print_v(mysvm.outputs);
-//    mysvm.print_v(mysvm.errors);
+    //Or you can choose to use custom data
+    //vector<vector<double>> X = { {33,-33},{10,-20},{10,-30},{20,-40},{20,10},{20,20}, {20,30},{20,40} };
+    //vector<double> Y = { -1.0,-1.0,-1.0,-1.0,1.0,1.0,1.0,1.0 };
+
+    SVM mysvm(X, Y, 10);
+    mysvm.train(500);
+    //mysvm.predict({ {10,20},{70,10},{82,10},{10,30},{70,40} });
+    mysvm.get_weights();
+    mysvm.plot(argc, argv);
+}
 ```
 # Conclusion
+![](svmplot.png)
+
 This is just a basic model for people who are interested in the algorithms and enjoy machine learning.
 
 for simple data like this, the amount of steps for training doesn't need to be large.
